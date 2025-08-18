@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발 블로그 - 미완성수집소</title>
+    <meta name="description" content="미완성수집소 앱 개발 과정과 업데이트 소식을 공유합니다">
+    <meta property="og:title" content="개발 블로그 - 미완성수집소">
+    <meta property="og:description" content="미완성수집소 앱 개발 과정과 업데이트 소식">
+    <meta property="og:image" content="assets/og-image.svg">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="fonts.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog-styles.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <span class="logo-text">미완성수집소</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html#features" class="nav-link">기능</a>
+                <a href="index.html#how-it-works" class="nav-link">사용법</a>
+                <a href="index.html#stories" class="nav-link">스토리</a>
+                <a href="blog.html" class="nav-link active">개발블로그</a>
+                <a href="index.html#download" class="nav-link nav-cta">다운로드</a>
+            </div>
+            <div class="nav-mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content" data-aos="fade-up">
+                <h1 class="blog-title">개발 블로그</h1>
+                <p class="blog-subtitle">미완성수집소가 완성되어가는 여정을 공유합니다</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">개발 로드맵</h2>
+                <p class="section-subtitle">2025년 개발 일정</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-date">2025년 1월</div>
+                    <div class="timeline-content">
+                        <h3>MVP 출시 준비 🚀</h3>
+                        <ul>
+                            <li>기본 기능 구현 완료</li>
+                            <li>Apple Sign In 인증 시스템</li>
+                            <li>Supabase 백엔드 연동</li>
+                            <li>UI/UX 최종 점검</li>
+                        </ul>
+                        <span class="status-badge completed">완료</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-date">2025년 2월</div>
+                    <div class="timeline-content">
+                        <h3>App Store 출시 🎉</h3>
+                        <ul>
+                            <li>앱 스토어 심사 제출</li>
+                            <li>마케팅 자료 준비</li>
+                            <li>초기 사용자 피드백 수집</li>
+                            <li>버그 수정 및 안정화</li>
+                        </ul>
+                        <span class="status-badge in-progress">진행중</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-date">2025년 3월</div>
+                    <div class="timeline-content">
+                        <h3>실시간 협업 기능 🔄</h3>
+                        <ul>
+                            <li>Supabase Realtime 구현</li>
+                            <li>실시간 알림 시스템</li>
+                            <li>동시 편집 기능</li>
+                            <li>협업 대시보드</li>
+                        </ul>
+                        <span class="status-badge planned">예정</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-date">2025년 4월</div>
+                    <div class="timeline-content">
+                        <h3>AI 기능 추가 🤖</h3>
+                        <ul>
+                            <li>AI 작품 추천 시스템</li>
+                            <li>자동 카테고리 분류</li>
+                            <li>창작 도우미 기능</li>
+                            <li>표절 검사 시스템</li>
+                        </ul>
+                        <span class="status-badge planned">예정</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="timeline-date">2025년 5월</div>
+                    <div class="timeline-content">
+                        <h3>Android 버전 출시 📱</h3>
+                        <ul>
+                            <li>React Native 포팅</li>
+                            <li>Google Play Store 출시</li>
+                            <li>크로스 플랫폼 동기화</li>
+                            <li>Android 특화 기능</li>
+                        </ul>
+                        <span class="status-badge planned">예정</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Updates -->
+    <section class="updates-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">최신 업데이트</h2>
+                <p class="section-subtitle">개발 진행 상황과 새로운 소식</p>
+            </div>
+
+            <div class="updates-grid">
+                <article class="update-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="update-header">
+                        <span class="update-date">2025.01.18</span>
+                        <span class="update-tag feature">새 기능</span>
+                    </div>
+                    <h3>푸시 알림 시스템 구현 완료</h3>
+                    <p>APNs를 통한 실시간 푸시 알림 시스템을 구현했습니다. 이제 다른 사용자가 여러분의 작품에 기여하거나 좋아요를 누를 때 즉시 알림을 받을 수 있습니다.</p>
+                    <div class="update-footer">
+                        <span class="update-author">개발팀</span>
+                    </div>
+                </article>
+
+                <article class="update-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="update-header">
+                        <span class="update-date">2025.01.15</span>
+                        <span class="update-tag improvement">개선</span>
+                    </div>
+                    <h3>UI/UX 대폭 개선</h3>
+                    <p>사용자 피드백을 반영하여 앱의 전반적인 UI/UX를 개선했습니다. MaruBuri 폰트를 적용하여 더욱 따뜻하고 친근한 느낌을 전달합니다.</p>
+                    <div class="update-footer">
+                        <span class="update-author">디자인팀</span>
+                    </div>
+                </article>
+
+                <article class="update-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="update-header">
+                        <span class="update-date">2025.01.10</span>
+                        <span class="update-tag bugfix">버그 수정</span>
+                    </div>
+                    <h3>회원탈퇴 시스템 안정화</h3>
+                    <p>회원탈퇴 시 발생하던 UUID 대소문자 문제를 해결했습니다. 이제 탈퇴 후에도 작품은 '탈퇴한 사용자'로 안전하게 보존됩니다.</p>
+                    <div class="update-footer">
+                        <span class="update-author">백엔드팀</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">기술 스택</h2>
+                <p class="section-subtitle">미완성수집소를 만드는 기술들</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tech-icon">
+                        <i class="fab fa-swift"></i>
+                    </div>
+                    <h3>Swift & SwiftUI</h3>
+                    <p>iOS 네이티브 앱 개발</p>
+                </div>
+
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Supabase</h3>
+                    <p>백엔드 & 실시간 데이터베이스</p>
+                </div>
+
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tech-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3>Apple Sign In</h3>
+                    <p>안전한 사용자 인증</p>
+                </div>
+
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="tech-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>APNs</h3>
+                    <p>푸시 알림 시스템</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content" data-aos="zoom-in">
+                <h2>함께 만들어가요</h2>
+                <p>미완성수집소의 개발 과정에 참여하고 싶으신가요?<br>
+                피드백, 제안, 버그 리포트 모두 환영합니다!</p>
+                <div class="contact-buttons">
+                    <a href="https://github.com/HelloWorldSagwa/UnfinishedVault" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i>
+                        GitHub 저장소
+                    </a>
+                    <a href="mailto:dev@unfinishedvault.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        이메일 문의
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>미완성수집소</h3>
+                    <p>미완성이 완성되는 곳</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>제품</h4>
+                        <a href="index.html#features">기능</a>
+                        <a href="index.html#how-it-works">사용법</a>
+                        <a href="index.html#stories">스토리</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>개발</h4>
+                        <a href="#timeline">로드맵</a>
+                        <a href="#updates">업데이트</a>
+                        <a href="#tech">기술 스택</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>정책</h4>
+                        <a href="#">개인정보처리방침</a>
+                        <a href="#">이용약관</a>
+                        <a href="#">저작권 정책</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 미완성수집소. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="blog-script.js"></script>
+</body>
+</html>

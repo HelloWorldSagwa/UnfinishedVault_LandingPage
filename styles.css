@@ -20,8 +20,8 @@
     --shadow-medium: rgba(0, 0, 0, 0.1);
     
     /* Typography */
-    --font-korean: 'Noto Sans KR', sans-serif;
-    --font-english: 'Inter', sans-serif;
+    --font-korean: 'MaruBuri', 'Noto Sans KR', sans-serif;
+    --font-english: 'MaruBuri', 'Inter', sans-serif;
     
     /* Spacing */
     --spacing-xs: 0.5rem;

@@ -1,0 +1,72 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="paperGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f0f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#bgGradient)"/>
+  
+  <!-- Main Paper/Document -->
+  <g transform="translate(256, 256)">
+    <!-- Paper Shadow -->
+    <rect x="-120" y="-150" width="240" height="320" rx="20" fill="black" opacity="0.2" transform="translate(8, 8)"/>
+    
+    <!-- Paper -->
+    <rect x="-120" y="-150" width="240" height="320" rx="20" fill="url(#paperGradient)"/>
+    
+    <!-- Writing Lines (incomplete) -->
+    <rect x="-90" y="-110" width="180" height="8" rx="4" fill="#667eea" opacity="0.8"/>
+    <rect x="-90" y="-85" width="180" height="8" rx="4" fill="#667eea" opacity="0.6"/>
+    <rect x="-90" y="-60" width="120" height="8" rx="4" fill="#667eea" opacity="0.4"/>
+    
+    <!-- Dotted line showing incompleteness -->
+    <g stroke="#764ba2" stroke-width="3" stroke-dasharray="8 6" opacity="0.6">
+      <line x1="-90" y1="-30" x2="90" y2="-30"/>
+      <line x1="-90" y1="-5" x2="60" y2="-5"/>
+    </g>
+    
+    <!-- Collaborative Hands/Pens -->
+    <!-- First pen (left) -->
+    <g transform="rotate(-25) translate(-80, 20)">
+      <rect x="0" y="0" width="8" height="60" rx="4" fill="#ff6b6b"/>
+      <polygon points="0,60 4,70 8,60" fill="#ff6b6b"/>
+    </g>
+    
+    <!-- Second pen (right) -->
+    <g transform="rotate(25) translate(80, 20)">
+      <rect x="0" y="0" width="8" height="60" rx="4" fill="#4ecdc4"/>
+      <polygon points="0,60 4,70 8,60" fill="#4ecdc4"/>
+    </g>
+    
+    <!-- Plus symbols showing collaboration -->
+    <g fill="#ffd93d" opacity="0.8">
+      <rect x="-90" y="50" width="20" height="4" rx="2"/>
+      <rect x="-82" y="42" width="4" height="20" rx="2"/>
+    </g>
+    
+    <g fill="#6bcf7f" opacity="0.8">
+      <rect x="70" y="80" width="20" height="4" rx="2"/>
+      <rect x="78" y="72" width="4" height="20" rx="2"/>
+    </g>
+    
+    <!-- Completion progress bar at bottom -->
+    <rect x="-90" y="130" width="180" height="12" rx="6" fill="white" opacity="0.3"/>
+    <rect x="-90" y="130" width="108" height="12" rx="6" fill="#ffd93d"/>
+    
+    <!-- Small sparkles -->
+    <g fill="white" opacity="0.9">
+      <circle cx="-140" cy="-100" r="4"/>
+      <circle cx="140" cy="-120" r="3"/>
+      <circle cx="130" cy="100" r="4"/>
+      <circle cx="-130" cy="120" r="3"/>
+    </g>
+  </g>
+</svg>

@@ -209,6 +209,11 @@
     color: #dc2626;
 }
 
+.update-tag.milestone {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
 .update-card h3 {
     font-size: 1.125rem;
     margin-bottom: var(--spacing-sm);

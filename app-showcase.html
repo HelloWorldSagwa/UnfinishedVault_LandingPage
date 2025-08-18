@@ -167,7 +167,7 @@
             <div class="view-selector">
                 <h3>화면 선택</h3>
                 <div class="view-buttons">
-                    <button class="view-button active" onclick="changeView('app-screenshot.html', this)">
+                    <button class="view-button active" onclick="changeView('browse-view.html', this)">
                         둘러보기
                         <span>작품 목록</span>
                     </button>
@@ -175,13 +175,17 @@
                         게스트 모드
                         <span>작성 제한</span>
                     </button>
+                    <button class="view-button" onclick="changeView('app-screenshot.html', this)">
+                        작품 상세
+                        <span>기여 화면</span>
+                    </button>
                 </div>
             </div>
         </div>
         
         <div class="preview-area">
             <div class="iphone-wrapper">
-                <iframe id="screenFrame" src="app-screenshot.html" class="screen-iframe"></iframe>
+                <iframe id="screenFrame" src="browse-view.html" class="screen-iframe"></iframe>
             </div>
         </div>
     </div>

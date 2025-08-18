@@ -302,12 +302,14 @@
         .tab-icon {
             width: 24px;
             height: 24px;
-            background: #8e8e93;
-            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .tab-icon.active {
-            background: #5e60ce;
+        .tab-icon svg {
+            width: 24px;
+            height: 24px;
         }
         
         .tab-label {
@@ -317,23 +319,6 @@
         
         .tab-label.active {
             color: #5e60ce;
-        }
-        
-        /* Floating Action Button */
-        .fab {
-            position: absolute;
-            bottom: 100px;
-            right: 20px;
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #5e60ce, #7c7fe8);
-            border-radius: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 12px rgba(94, 96, 206, 0.4);
         }
     </style>
 </head>
@@ -465,25 +450,34 @@
             <!-- Bottom Tab Bar -->
             <div class="bottom-tab-bar">
                 <div class="bottom-tab-item">
-                    <div class="tab-icon active"></div>
-                    <span class="tab-label active">둘러보기</span>
-                </div>
-                <div class="bottom-tab-item">
-                    <div class="tab-icon"></div>
+                    <div class="tab-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="9" stroke="#8e8e93" stroke-width="1.5"/>
+                            <path d="M15.5 8.5L8.5 15.5M15.5 8.5L14 7M15.5 8.5L17 10L10 17H7V14L14 7L15.5 8.5Z" stroke="#8e8e93" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <span class="tab-label">작성</span>
                 </div>
                 <div class="bottom-tab-item">
-                    <div class="tab-icon"></div>
-                    <span class="tab-label">내활동</span>
+                    <div class="tab-icon active">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#5e60ce" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" stroke="#5e60ce" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2Z" stroke="#5e60ce" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="tab-label active">둘러보기</span>
                 </div>
                 <div class="bottom-tab-item">
-                    <div class="tab-icon"></div>
-                    <span class="tab-label">랭킹</span>
+                    <div class="tab-icon" style="position: relative;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="#8e8e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="7" r="4" stroke="#8e8e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div style="position: absolute; top: -4px; right: -4px; background: #ff3b30; color: white; font-size: 10px; font-weight: 600; width: 16px; height: 16px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">3</div>
+                    </div>
+                    <span class="tab-label">내 활동</span>
                 </div>
             </div>
-            
-            <!-- Floating Action Button -->
-            <div class="fab">✍️</div>
         </div>
     </div>
 </body>

@@ -29,7 +29,27 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             padding: 24px;
             position: relative;
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* 스크롤바 스타일 */
+        .animation-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .animation-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .animation-container::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+        
+        .animation-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
         }
         
         /* 작품 카드 스타일 */
@@ -338,6 +358,7 @@
             const container = document.getElementById('contributionsContainer');
             const card = document.createElement('div');
             card.className = 'contribution-card';
+            card.id = `contribution-${index}`;
             card.innerHTML = `
                 <div class="contribution-header">
                     <div>
@@ -357,6 +378,11 @@
                 
                 // 알림 표시
                 showNotification(`${contribution.name}님이 기여했습니다`);
+                
+                // 새로운 기여가 추가되면 스크롤
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                }, 200);
             }, 100);
         }
         
@@ -394,6 +420,9 @@
             heartCount = 28;
             contributorCount = 0;
             currentStage = 0;
+            
+            // 스크롤 초기화
+            document.querySelector('.animation-container').scrollTop = 0;
             
             // 애니메이션 재시작
             runAnimation();

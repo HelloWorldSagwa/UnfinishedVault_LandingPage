@@ -22,8 +22,8 @@
         }
         
         .animation-container {
-            width: 500px;
-            height: 600px;
+            width: 520px;
+            height: 650px;
             background: white;
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -193,7 +193,7 @@
         .contribution-card {
             background: #f2f2f7;
             border-radius: 10px;
-            padding: 12px;
+            padding: 14px;
             margin-bottom: 12px;
             opacity: 0;
             transform: translateX(-20px);
@@ -223,15 +223,17 @@
         
         .contribution-content {
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.6;
             color: #000;
+            word-break: keep-all;
+            white-space: pre-wrap;
         }
         
         .typing-text {
-            overflow: hidden;
-            white-space: nowrap;
-            width: 0;
-            animation: typing 2s steps(30) forwards;
+            /* 타이핑 효과 제거 - 전체 텍스트가 보이도록 */
+            line-height: 1.5;
+            white-space: normal;
+            word-break: keep-all;
         }
         
         /* 알림 토스트 */
@@ -267,11 +269,6 @@
             }
         }
         
-        @keyframes typing {
-            to {
-                width: 100%;
-            }
-        }
         
         @keyframes popIn {
             to {
@@ -379,7 +376,7 @@
                         <div class="contribution-time">방금 전</div>
                     </div>
                 </div>
-                <div class="contribution-content typing-text">${contribution.content}</div>
+                <div class="contribution-content">${contribution.content}</div>
             `;
             container.appendChild(card);
             

@@ -239,19 +239,17 @@
         /* 알림 토스트 */
         .notification-toast {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #007aff;
-            color: white;
-            padding: 10px 14px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             font-size: 13px;
-            font-weight: 500;
             opacity: 0;
-            transform: translateY(-20px);
+            transform: translateX(20px);
             z-index: 1000;
-            max-width: 200px;
+            border: 1px solid #e5e5ea;
         }
         
         .notification-toast.show {
@@ -283,7 +281,7 @@
         @keyframes slideInToast {
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
         
@@ -401,11 +399,16 @@
         function showNotification(message) {
             const toast = document.getElementById('notificationToast');
             toast.textContent = message;
-            toast.classList.add('show');
+            toast.classList.remove('show'); // 기존 클래스 제거
+            
+            // 약간의 지연 후 show 클래스 추가 (애니메이션 재시작)
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 10);
             
             setTimeout(() => {
                 toast.classList.remove('show');
-            }, 2000);
+            }, 2500);
         }
         
         function animateHeart() {
@@ -466,17 +469,17 @@
                 // 세 번째 기여 알림
                 setTimeout(() => {
                     showNotification(`${contributions[2].name}님이 기여했습니다`);
-                }, 200);
+                }, 300);
                 setTimeout(() => {
                     animateHeart();
                     animateHeart();
-                }, 800);
+                }, 1000);
             }, 6000);
             
-            // Stage 4: 완성 알림 (8초 후)
+            // Stage 4: 완성 알림 (9초 후)
             setTimeout(() => {
                 showNotification('📖 작품이 100% 완성되었습니다!');
-            }, 8000);
+            }, 9000);
             
             // 11초 후 리셋
             setTimeout(resetAnimation, 11000);

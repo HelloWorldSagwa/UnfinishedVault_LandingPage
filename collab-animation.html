@@ -386,9 +386,6 @@
                 document.getElementById('contributorCount').textContent = `👥 ${contributorCount}`;
                 updateProgress(contribution.progress);
                 
-                // 알림 표시
-                showNotification(`${contribution.name}님이 기여했습니다`);
-                
                 // 새로운 기여가 추가되면 스크롤
                 setTimeout(() => {
                     const container = document.getElementById('contributionsContainer');
@@ -443,17 +440,29 @@
             // Stage 1: 첫 번째 기여 (2초 후)
             setTimeout(() => {
                 addContribution(contributions[0], 0);
+                // 첫 번째 기여 알림
+                setTimeout(() => {
+                    showNotification(`${contributions[0].name}님이 기여했습니다`);
+                }, 200);
             }, 2000);
             
             // Stage 2: 두 번째 기여 + 좋아요 (4초 후)
             setTimeout(() => {
                 addContribution(contributions[1], 1);
+                // 두 번째 기여 알림
+                setTimeout(() => {
+                    showNotification(`${contributions[1].name}님이 기여했습니다`);
+                }, 200);
                 setTimeout(animateHeart, 500);
             }, 4000);
             
             // Stage 3: 세 번째 기여 + 좋아요 (6초 후)
             setTimeout(() => {
                 addContribution(contributions[2], 2);
+                // 세 번째 기여 알림
+                setTimeout(() => {
+                    showNotification(`${contributions[2].name}님이 기여했습니다`);
+                }, 200);
                 setTimeout(() => {
                     animateHeart();
                     animateHeart();

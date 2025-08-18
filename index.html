@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnfinishedVault - 미완성이 완성되는 곳</title>
+    <meta name="description" content="혼자서는 끝내지 못했던 이야기, 함께라면 완성할 수 있습니다. 창작자들이 만나 서로의 작품을 완성하는 협업 창작 플랫폼">
+    <meta property="og:title" content="UnfinishedVault - 미완성이 완성되는 곳">
+    <meta property="og:description" content="창작자들이 만나 서로의 작품을 완성하는 협업 창작 플랫폼">
+    <meta property="og:image" content="assets/og-image.svg">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">UnfinishedVault</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">기능</a>
+                <a href="#how-it-works" class="nav-link">사용법</a>
+                <a href="#stories" class="nav-link">스토리</a>
+                <a href="#download" class="nav-link nav-cta">다운로드</a>
+            </div>
+            <div class="nav-mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-aos="fade-up">
+                    미완성이<br>
+                    <span class="gradient-text">완성</span>되는 곳
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    혼자서는 끝내지 못했던 이야기,<br>
+                    함께라면 완성할 수 있습니다.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#download" class="btn btn-primary">
+                        <i class="fab fa-apple"></i>
+                        App Store에서 다운로드
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary">
+                        자세히 알아보기
+                    </a>
+                </div>
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat">
+                        <span class="stat-number">12,847</span>
+                        <span class="stat-label">완성된 작품</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">48,291</span>
+                        <span class="stat-label">활발한 창작자</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.8</span>
+                        <span class="stat-label">평균 평점</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
+                <div class="phone-mockup">
+                    <img src="assets/app-mockup.svg" alt="UnfinishedVault App">
+                    <div class="floating-card card-1">
+                        <div class="card-icon">✍️</div>
+                        <div class="card-text">새로운 시작</div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="card-icon">🤝</div>
+                        <div class="card-text">협업 완성</div>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="card-icon">💫</div>
+                        <div class="card-text">영감 공유</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">혼자서는 어려웠던 창작의 순간들</h2>
+                <p class="section-subtitle">누구나 겪어본 창작의 고민</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="problem-icon">😔</div>
+                    <h3>막막한 중간</h3>
+                    <p>시작은 했지만 어떻게 이어가야 할지 막막할 때</p>
+                </div>
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="problem-icon">🤯</div>
+                    <h3>영감의 고갈</h3>
+                    <p>더 이상 아이디어가 떠오르지 않을 때</p>
+                </div>
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="problem-icon">😩</div>
+                    <h3>끝맺음의 어려움</h3>
+                    <p>마무리를 어떻게 지어야 할지 모를 때</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-content">
+                <div class="solution-text" data-aos="fade-right">
+                    <h2 class="section-title">
+                        미완성은 부끄러운 게 아니라<br>
+                        <span class="gradient-text">새로운 시작</span>입니다
+                    </h2>
+                    <p class="solution-description">
+                        UnfinishedVault는 창작자들이 서로의 미완성 작품을 공유하고,
+                        함께 완성해가는 협업 창작 플랫폼입니다.
+                    </p>
+                    <ul class="solution-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>당신의 미완성 작품이 누군가에게는 영감이 됩니다</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>다른 창작자의 시선으로 새로운 방향을 발견합니다</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>함께 만들어가는 과정에서 더 큰 성장을 경험합니다</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="solution-visual" data-aos="fade-left">
+                    <div class="collab-animation">
+                        <div class="writer writer-1">
+                            <img src="assets/writer-1.svg" alt="Writer 1">
+                            <div class="thought-bubble">시작은 했는데...</div>
+                        </div>
+                        <div class="connection-line"></div>
+                        <div class="writer writer-2">
+                            <img src="assets/writer-2.svg" alt="Writer 2">
+                            <div class="thought-bubble">이렇게 이어가면!</div>
+                        </div>
+                        <div class="completed-work">
+                            <i class="fas fa-book"></i>
+                            <span>완성!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">창작을 위한 모든 기능</h2>
+                <p class="section-subtitle">협업 창작을 쉽고 즐겁게</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>쉬운 시작</h3>
+                    <p>떠오른 아이디어를 바로 기록하고 공유하세요. 완성도는 중요하지 않습니다.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>협업 기여</h3>
+                    <p>다른 창작자의 작품에 당신만의 시각을 더해 함께 완성해나가세요.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>안전한 창작 환경</h3>
+                    <p>일일 기여 제한과 작품당 1회 기여로 건전한 창작 문화를 만듭니다.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>성장하는 커뮤니티</h3>
+                    <p>좋아요, 북마크, 알림으로 서로를 응원하고 함께 성장합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">간단한 3단계</h2>
+                <p class="section-subtitle">누구나 쉽게 시작할 수 있습니다</p>
+            </div>
+            <div class="steps-container">
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>작품 공유</h3>
+                        <p>미완성 상태 그대로 공유하세요.<br>시, 소설, 에세이, 아이디어 모두 환영합니다.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>기여 받기</h3>
+                        <p>다른 창작자들이 당신의 작품에<br>새로운 시각과 아이디어를 더합니다.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>함께 완성</h3>
+                        <p>협업을 통해 혼자서는 상상하지 못했던<br>멋진 작품이 탄생합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="stories-section" id="stories">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">실제 창작자들의 이야기</h2>
+                <p class="section-subtitle">UnfinishedVault에서 완성된 작품들</p>
+            </div>
+            <div class="stories-grid">
+                <div class="story-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="story-header">
+                        <img src="assets/avatar-1.svg" alt="창작자" class="story-avatar">
+                        <div class="story-meta">
+                            <h4>김민수</h4>
+                            <span>소설 작가</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        "3년 동안 서랍에 넣어둔 미완성 소설이 드디어 완성됐어요. 
+                        다른 작가님들의 기여로 제가 상상하지 못했던 전개가 더해져서 
+                        훨씬 풍성한 이야기가 되었습니다."
+                    </blockquote>
+                    <div class="story-stats">
+                        <span><i class="fas fa-heart"></i> 1,284</span>
+                        <span><i class="fas fa-users"></i> 4명 협업</span>
+                    </div>
+                </div>
+                <div class="story-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="story-header">
+                        <img src="assets/avatar-2.svg" alt="창작자" class="story-avatar">
+                        <div class="story-meta">
+                            <h4>이서연</h4>
+                            <span>시인</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        "첫 연만 쓰고 막막했던 시가 아름답게 완성됐어요. 
+                        각자의 감성이 모여 하나의 작품이 되는 과정이 정말 놀라웠습니다."
+                    </blockquote>
+                    <div class="story-stats">
+                        <span><i class="fas fa-heart"></i> 892</span>
+                        <span><i class="fas fa-users"></i> 3명 협업</span>
+                    </div>
+                </div>
+                <div class="story-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="story-header">
+                        <img src="assets/avatar-3.svg" alt="창작자" class="story-avatar">
+                        <div class="story-meta">
+                            <h4>박준혁</h4>
+                            <span>에세이스트</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        "혼자 쓸 때는 막막했는데, 다른 분들의 시각이 더해지니 
+                        제 이야기가 더 깊고 풍부해졌습니다. 진정한 협업의 힘을 느꼈어요."
+                    </blockquote>
+                    <div class="story-stats">
+                        <span><i class="fas fa-heart"></i> 567</span>
+                        <span><i class="fas fa-users"></i> 2명 협업</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="download">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2 class="cta-title">
+                    지금 시작하세요<br>
+                    당신의 미완성이 <span class="gradient-text">완성</span>을 기다립니다
+                </h2>
+                <p class="cta-subtitle">
+                    iOS App Store에서 무료로 다운로드하고<br>
+                    창작자 커뮤니티에 참여하세요
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://apps.apple.com" class="btn btn-large btn-primary">
+                        <i class="fab fa-apple"></i>
+                        <div class="btn-text">
+                            <span class="btn-small">Download on the</span>
+                            <span class="btn-big">App Store</span>
+                        </div>
+                    </a>
+                    <div class="cta-note">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Android 버전 준비 중</span>
+                    </div>
+                </div>
+                <div class="app-preview" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/app-preview.svg" alt="UnfinishedVault App Preview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>UnfinishedVault</h3>
+                    <p>미완성이 완성되는 곳</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>제품</h4>
+                        <a href="#features">기능</a>
+                        <a href="#how-it-works">사용법</a>
+                        <a href="#stories">스토리</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>지원</h4>
+                        <a href="#">도움말</a>
+                        <a href="#">문의하기</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>정책</h4>
+                        <a href="#">개인정보처리방침</a>
+                        <a href="#">이용약관</a>
+                        <a href="#">저작권 정책</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UnfinishedVault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

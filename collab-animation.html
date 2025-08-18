@@ -29,27 +29,9 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             padding: 24px;
             position: relative;
-            overflow-y: auto;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        
-        /* 스크롤바 스타일 */
-        .animation-container::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .animation-container::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        
-        .animation-container::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 3px;
-        }
-        
-        .animation-container::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         
         /* 작품 카드 스타일 */
@@ -168,6 +150,10 @@
             margin-top: 24px;
             padding-top: 20px;
             border-top: 1px solid #e5e5ea;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
         }
         
         .section-title {
@@ -175,6 +161,33 @@
             font-weight: 600;
             margin-bottom: 16px;
             color: #000;
+            flex-shrink: 0;
+        }
+        
+        #contributionsContainer {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 8px;
+            scroll-behavior: smooth;
+        }
+        
+        /* 스크롤바 스타일 */
+        #contributionsContainer::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        #contributionsContainer::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        #contributionsContainer::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 2px;
+        }
+        
+        #contributionsContainer::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.25);
         }
         
         .contribution-card {
@@ -381,8 +394,9 @@
                 
                 // 새로운 기여가 추가되면 스크롤
                 setTimeout(() => {
-                    card.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                }, 200);
+                    const container = document.getElementById('contributionsContainer');
+                    container.scrollTop = container.scrollHeight;
+                }, 300);
             }, 100);
         }
         
@@ -422,7 +436,7 @@
             currentStage = 0;
             
             // 스크롤 초기화
-            document.querySelector('.animation-container').scrollTop = 0;
+            document.getElementById('contributionsContainer').scrollTop = 0;
             
             // 애니메이션 재시작
             runAnimation();

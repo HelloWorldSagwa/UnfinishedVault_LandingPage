@@ -65,11 +65,12 @@
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-    text-align: right;
+    text-align: left;
     margin-right: calc(50% + var(--spacing-xl));
 }
 
 .timeline-item:nth-child(even) .timeline-content {
+    text-align: left;
     margin-left: calc(50% + var(--spacing-xl));
 }
 

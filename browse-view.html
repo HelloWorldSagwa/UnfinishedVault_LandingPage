@@ -198,6 +198,13 @@
             padding: 16px;
             margin-bottom: 12px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .work-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
         }
         
         .card-header {
@@ -361,7 +368,7 @@
             <!-- Tab Bar -->
             <div class="tab-bar">
                 <button class="tab-item active" onclick="showBrowseView()">전체</button>
-                <button class="tab-item" onclick="showDetailView()">글</button>
+                <button class="tab-item" onclick="filterByCategory('글')">글</button>
                 <button class="tab-item">시</button>
                 <button class="tab-item">소설</button>
                 <button class="tab-item">에세이</button>
@@ -377,7 +384,7 @@
                 <!-- Content Area -->
                 <div class="content-area">
                 <!-- Card 1 -->
-                <div class="work-card">
+                <div class="work-card" onclick="showDetailView()">
                     <div class="card-header">
                         <div class="card-title-section">
                             <div class="card-title">비 오는 날의 재즈바</div>
@@ -407,7 +414,7 @@
                 </div>
                 
                 <!-- Card 2 -->
-                <div class="work-card">
+                <div class="work-card" onclick="showDetailView()">
                     <div class="card-header">
                         <div class="card-title-section">
                             <div class="card-title">별이 된 고양이</div>
@@ -439,7 +446,7 @@
                 </div>
                 
                 <!-- Card 3 -->
-                <div class="work-card">
+                <div class="work-card" onclick="showDetailView()">
                     <div class="card-header">
                         <div class="card-title-section">
                             <div class="card-title">프로그래머의 하루</div>
@@ -589,10 +596,9 @@
             document.getElementById('browseView').style.display = 'none';
             document.getElementById('detailView').style.display = 'flex';
             
-            // Update tab active state
+            // Update tab active state - 모든 탭 비활성화 (상세 뷰에서는 탭이 활성화되지 않음)
             const tabs = document.querySelectorAll('.tab-item');
             tabs.forEach(tab => tab.classList.remove('active'));
-            tabs[1].classList.add('active'); // 글 탭 활성화
             
             // Update status bar time to 6:26
             document.querySelector('.status-time').textContent = '6:26';
@@ -600,6 +606,19 @@
         
         function toggleFollow() {
             alert('기여하기 기능은 앱에서 사용 가능합니다.');
+        }
+        
+        function filterByCategory(category) {
+            // 탭 활성화 상태 업데이트
+            const tabs = document.querySelectorAll('.tab-item');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // 해당 카테고리 탭을 찾아서 활성화
+            tabs.forEach(tab => {
+                if (tab.textContent.trim() === category) {
+                    tab.classList.add('active');
+                }
+            });
         }
     </script>
 </body>

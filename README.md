@@ -1,7 +1,7 @@
-# UnfinishedVault 랜딩페이지
+# 미완성수집소 랜딩페이지
 
 ## 🎨 개요
-UnfinishedVault 앱의 공식 랜딩페이지입니다. Ghost와 Notion의 미니멀한 디자인을 참고하여 깔끔하고 정적인 느낌으로 제작되었습니다.
+미완성수집소 앱의 공식 랜딩페이지입니다. Ghost와 Notion의 미니멀한 디자인을 참고하여 깔끔하고 정적인 느낌으로 제작되었습니다.
 
 ## 🎯 목표
 - **연간 누적 이용자 100만명** 확보를 위한 전환율 최적화
@@ -10,7 +10,7 @@ UnfinishedVault 앱의 공식 랜딩페이지입니다. Ghost와 Notion의 미�
 
 ## 📁 파일 구조
 ```
-UnfinishedVault_LandingPage/
+미완성수집소_LandingPage/
 ├── index.html          # 메인 HTML 파일
 ├── styles.css          # CSS 스타일시트
 ├── script.js           # JavaScript 인터랙션
@@ -143,9 +143,9 @@ npx http-server
 랜딩페이지 개선 제안이나 버그 리포트는 언제든 환영합니다.
 
 ## 📝 라이선스
-© 2025 UnfinishedVault. All rights reserved.
+© 2025 미완성수집소. All rights reserved.
 
 ---
 
-**제작**: UnfinishedVault Team  
+**제작**: 미완성수집소 Team  
 **디자인 철학**: Ghost의 미니멀리즘 + Notion의 깔끔함 + 창작의 따뜻함

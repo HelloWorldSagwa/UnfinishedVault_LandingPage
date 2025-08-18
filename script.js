@@ -56,6 +56,7 @@ if (mobileToggle) {
                 <a href="#how-it-works" class="mobile-link">사용법</a>
                 <a href="#stories" class="mobile-link">스토리</a>
                 <a href="#download" class="mobile-link mobile-cta">다운로드</a>
+                <a href="https://github.com/HelloWorldSagwa/UnfinishedVault_LandingPage/wiki" target="_blank" class="mobile-link">개발 블로그</a>
             `;
             navbar.appendChild(mobileMenu);
             

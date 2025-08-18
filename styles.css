@@ -124,6 +124,20 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+.nav-blog {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 8px;
+    margin-left: var(--spacing-sm);
+}
+
+.nav-blog:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    color: white;
+    transform: translateY(-1px);
+}
+
 .nav-mobile-toggle {
     display: none;
     flex-direction: column;

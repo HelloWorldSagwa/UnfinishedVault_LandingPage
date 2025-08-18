@@ -11,7 +11,7 @@
   <circle cx="50" cy="50" r="3" fill="#5e60ce"/>
   <circle cx="60" cy="50" r="3" fill="#5e60ce"/>
   <circle cx="70" cy="50" r="3" fill="#5e60ce"/>
-  <text x="160" y="55" font-family="Inter" font-size="14" fill="#1a1a2e" text-anchor="middle">UnfinishedVault</text>
+  <text x="160" y="55" font-family="Inter" font-size="14" fill="#1a1a2e" text-anchor="middle">미완성수집소</text>
   <text x="310" y="55" font-family="Inter" font-size="12" fill="#6c757d" text-anchor="end">9:41</text>
   
   <!-- App Header -->

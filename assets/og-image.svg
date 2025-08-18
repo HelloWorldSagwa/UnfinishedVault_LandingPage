@@ -10,7 +10,7 @@
   <rect width="1200" height="630" fill="url(#ogGradient)"/>
   
   <!-- Logo/Title -->
-  <text x="600" y="200" font-family="Inter" font-size="80" font-weight="bold" fill="#ffffff" text-anchor="middle">UnfinishedVault</text>
+  <text x="600" y="200" font-family="Inter" font-size="80" font-weight="bold" fill="#ffffff" text-anchor="middle">미완성수집소</text>
   
   <!-- Tagline -->
   <text x="600" y="280" font-family="Inter" font-size="36" fill="#ffffff" opacity="0.9" text-anchor="middle">미완성이 완성되는 곳</text>

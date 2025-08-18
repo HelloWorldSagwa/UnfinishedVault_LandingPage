@@ -201,26 +201,6 @@
             animation: typing 2s steps(30) forwards;
         }
         
-        /* 완성 배지 */
-        .completion-badge {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            background: linear-gradient(135deg, #34c759, #30d158);
-            color: white;
-            padding: 20px 40px;
-            border-radius: 20px;
-            font-size: 24px;
-            font-weight: 700;
-            box-shadow: 0 10px 30px rgba(52, 199, 89, 0.3);
-            z-index: 100;
-        }
-        
-        .completion-badge.show {
-            animation: popIn 0.5s ease forwards;
-        }
-        
         /* 알림 토스트 */
         .notification-toast {
             position: absolute;
@@ -283,27 +263,6 @@
             animation: heartBeat 0.3s ease;
         }
         
-        /* 진행 상태 표시 */
-        .stage-indicator {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-        }
-        
-        .stage-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #e5e5ea;
-            transition: background 0.3s ease;
-        }
-        
-        .stage-dot.active {
-            background: #007aff;
-        }
     </style>
 </head>
 <body>
@@ -312,13 +271,13 @@
         <div class="demo-work-card" id="workCard">
             <div class="card-header">
                 <div>
-                    <div class="card-title">비 오는 날의 재즈바</div>
-                    <div class="card-author">by 김민수</div>
+                    <div class="card-title">마지막 편의점</div>
+                    <div class="card-author">by 정서윤</div>
                 </div>
                 <span class="card-category">소설</span>
             </div>
             <div class="card-content">
-                빗소리가 창문을 두드리는 어느 늦은 오후, 나는 처음으로 그 재즈바의 문을 열었다...
+                새벽 3시 14분. 도시에서 유일하게 불이 켜진 곳은 골목 끝 24시간 편의점뿐이었다. 자동문이 열리자 차가운 형광등 불빛이 나를 맞았다. "어서오세요." 기계적인 인사말 뒤로, 알바생의 지친 눈빛이 스쳤다.
             </div>
             <div class="completion-section">
                 <div class="completion-text">완성도</div>
@@ -342,40 +301,26 @@
             <div id="contributionsContainer"></div>
         </div>
         
-        <!-- 완성 배지 -->
-        <div class="completion-badge" id="completionBadge">
-            ✨ 작품 완성! ✨
-        </div>
-        
         <!-- 알림 토스트 -->
         <div class="notification-toast" id="notificationToast"></div>
-        
-        <!-- 진행 상태 표시 -->
-        <div class="stage-indicator">
-            <div class="stage-dot active"></div>
-            <div class="stage-dot"></div>
-            <div class="stage-dot"></div>
-            <div class="stage-dot"></div>
-            <div class="stage-dot"></div>
-        </div>
     </div>
     
     <script>
         // 애니메이션 시퀀스
         const contributions = [
             {
-                name: "이서연",
-                content: "담배 연기 속에서 울려 퍼지는 색소폰 소리가 마음을 적셨다.",
+                name: "김민재",
+                content: "그녀는 늘 같은 자리에 있었다. 창가 구석, 커피 대신 삼각김밥 하나와 함께. 낮에는 병원 간호사, 밤에는 이곳의 유일한 손님. 우리는 서로의 이름도 모른 채 눈인사만 나눴다.",
                 progress: 50
             },
             {
-                name: "박준혁",
-                content: "바텐더가 건넨 위스키 한 잔에 오늘의 모든 시름을 담았다.",
+                name: "박하늘",
+                content: "어느 날 그녀가 말을 걸었다. \"당신도 잠 못 드는 사람이군요.\" 그 한마디로 시작된 대화는 새벽을 넘어 해가 뜰 때까지 이어졌다. 불면증, 외로움, 그리고 누구에게도 말하지 못한 상처들.",
                 progress: 75
             },
             {
-                name: "최유진",
-                content: "그날 밤, 재즈바에서 만난 사람들과 나는 서로의 이야기가 되었다.",
+                name: "이준호",
+                content: "편의점이 문을 닫는 날, 우리는 처음으로 밖에서 만났다. 햇빛 아래서 본 그녀의 미소는 형광등 불빛보다 눈부셨다. \"이제 어디서 만날까요?\" 그녀가 물었다. \"어디든요.\" 내가 대답했다.",
                 progress: 100
             }
         ];
@@ -437,25 +382,6 @@
             }, 300);
         }
         
-        function showCompletion() {
-            const badge = document.getElementById('completionBadge');
-            badge.classList.add('show');
-            
-            setTimeout(() => {
-                badge.classList.remove('show');
-            }, 2000);
-        }
-        
-        function updateStageIndicator(stage) {
-            const dots = document.querySelectorAll('.stage-dot');
-            dots.forEach((dot, index) => {
-                if (index <= stage) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }
         
         function resetAnimation() {
             // 초기화
@@ -468,43 +394,38 @@
             heartCount = 28;
             contributorCount = 0;
             currentStage = 0;
-            updateStageIndicator(0);
             
             // 애니메이션 재시작
             runAnimation();
         }
         
         function runAnimation() {
-            // Stage 1: 원작 표시 (이미 표시됨)
-            updateStageIndicator(0);
-            
-            // Stage 2: 첫 번째 기여 (2초 후)
+            // Stage 1: 첫 번째 기여 (2초 후)
             setTimeout(() => {
-                updateStageIndicator(1);
                 addContribution(contributions[0], 0);
             }, 2000);
             
-            // Stage 3: 두 번째 기여 + 좋아요 (4초 후)
+            // Stage 2: 두 번째 기여 + 좋아요 (4초 후)
             setTimeout(() => {
-                updateStageIndicator(2);
                 addContribution(contributions[1], 1);
                 setTimeout(animateHeart, 500);
             }, 4000);
             
-            // Stage 4: 세 번째 기여 (6초 후)
+            // Stage 3: 세 번째 기여 + 좋아요 (6초 후)
             setTimeout(() => {
-                updateStageIndicator(3);
                 addContribution(contributions[2], 2);
+                setTimeout(() => {
+                    animateHeart();
+                    animateHeart();
+                }, 800);
             }, 6000);
             
-            // Stage 5: 완성 축하 (8초 후)
+            // Stage 4: 완성 알림 (8초 후)
             setTimeout(() => {
-                updateStageIndicator(4);
-                showCompletion();
-                showNotification('🎉 작품이 완성되었습니다!');
+                showNotification('📖 작품이 100% 완성되었습니다!');
             }, 8000);
             
-            // 10초 후 리셋
+            // 11초 후 리셋
             setTimeout(resetAnimation, 11000);
         }
         

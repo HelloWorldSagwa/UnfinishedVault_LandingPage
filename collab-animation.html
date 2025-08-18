@@ -239,15 +239,19 @@
         /* 알림 토스트 */
         .notification-toast {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background: white;
-            padding: 12px 16px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            top: 10px;
+            right: 10px;
+            background: #007aff;
+            color: white;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
             font-size: 13px;
+            font-weight: 500;
             opacity: 0;
-            transform: translateX(100%);
+            transform: translateY(-20px);
+            z-index: 1000;
+            max-width: 200px;
         }
         
         .notification-toast.show {
@@ -279,7 +283,7 @@
         @keyframes slideInToast {
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateY(0);
             }
         }
         

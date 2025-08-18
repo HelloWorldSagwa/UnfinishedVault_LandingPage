@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미완성수집소 앱 쇼케이스</title>
+    <link rel="stylesheet" href="fonts.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'MaruBuri', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        
+        .showcase-container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+        
+        .controls {
+            flex: 1;
+            color: white;
+        }
+        
+        .controls h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        
+        .controls p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .view-selector {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .view-selector h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 16px;
+        }
+        
+        .view-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .view-button {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid transparent;
+            color: white;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .view-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(4px);
+        }
+        
+        .view-button.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+        
+        .view-button span {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .preview-area {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .iphone-wrapper {
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .iphone-wrapper:hover {
+            transform: scale(0.95);
+        }
+        
+        .screen-iframe {
+            width: 400px;
+            height: 820px;
+            border: none;
+            border-radius: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .showcase-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .controls h1 {
+                font-size: 36px;
+            }
+            
+            .iphone-wrapper {
+                transform: scale(0.7);
+            }
+            
+            .iphone-wrapper:hover {
+                transform: scale(0.75);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .iphone-wrapper {
+                transform: scale(0.5);
+            }
+            
+            .iphone-wrapper:hover {
+                transform: scale(0.55);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="showcase-container">
+        <div class="controls">
+            <h1>미완성수집소</h1>
+            <p>미완성이 완성되는 곳.<br>창작자들이 서로의 작품을 완성해가는 협업 플랫폼입니다.</p>
+            
+            <div class="view-selector">
+                <h3>화면 선택</h3>
+                <div class="view-buttons">
+                    <button class="view-button active" onclick="changeView('app-screenshot.html', this)">
+                        둘러보기
+                        <span>작품 목록</span>
+                    </button>
+                    <button class="view-button" onclick="changeView('guest-write-view.html', this)">
+                        게스트 모드
+                        <span>작성 제한</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="preview-area">
+            <div class="iphone-wrapper">
+                <iframe id="screenFrame" src="app-screenshot.html" class="screen-iframe"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function changeView(src, button) {
+            // Update iframe source
+            document.getElementById('screenFrame').src = src;
+            
+            // Update active button
+            document.querySelectorAll('.view-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+            
+            // Add a subtle animation
+            const iframe = document.getElementById('screenFrame');
+            iframe.style.opacity = '0';
+            setTimeout(() => {
+                iframe.style.opacity = '1';
+            }, 100);
+        }
+        
+        // Add smooth transition for iframe
+        document.getElementById('screenFrame').style.transition = 'opacity 0.3s ease';
+    </script>
+</body>
+</html>

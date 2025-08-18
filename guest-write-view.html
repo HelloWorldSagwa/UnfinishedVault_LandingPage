@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미완성수집소 - 게스트 모드</title>
+    <link rel="stylesheet" href="fonts.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'MaruBuri', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .iphone-container {
+            width: 380px;
+            height: 780px;
+            background: #000;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .iphone-screen {
+            width: 100%;
+            height: 100%;
+            background: #f5f5f7;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Status Bar */
+        .status-bar {
+            height: 44px;
+            background: #f5f5f7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .status-left {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .status-time {
+            color: #000;
+        }
+        
+        .status-right {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+        
+        .battery {
+            width: 25px;
+            height: 12px;
+            border: 2px solid #000;
+            border-radius: 3px;
+            position: relative;
+        }
+        
+        .battery::after {
+            content: '';
+            position: absolute;
+            right: -4px;
+            top: 3px;
+            width: 2px;
+            height: 6px;
+            background: #000;
+            border-radius: 0 1px 1px 0;
+        }
+        
+        .battery-fill {
+            width: 70%;
+            height: 100%;
+            background: #000;
+            border-radius: 1px;
+        }
+        
+        /* App Content */
+        .app-content {
+            height: calc(100% - 44px - 83px);
+            background: #f2f2f7;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Navigation Bar */
+        .nav-bar {
+            background: white;
+            padding: 12px 16px;
+            border-bottom: 0.5px solid #e5e5ea;
+            text-align: center;
+        }
+        
+        .nav-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #000;
+        }
+        
+        /* Guest Content */
+        .guest-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 24px;
+            gap: 32px;
+        }
+        
+        /* Icon */
+        .guest-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .guest-icon svg {
+            width: 80px;
+            height: 80px;
+        }
+        
+        /* Message */
+        .guest-message {
+            text-align: center;
+        }
+        
+        .guest-title {
+            font-size: 34px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+        
+        .guest-subtitle {
+            font-size: 17px;
+            color: #8e8e93;
+            line-height: 1.4;
+        }
+        
+        /* Features List */
+        .features-list {
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+        }
+        
+        .feature-item:not(:last-child) {
+            border-bottom: 0.5px solid #e5e5ea;
+        }
+        
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            color: #007aff;
+        }
+        
+        .feature-text {
+            flex: 1;
+            font-size: 15px;
+            color: #000;
+        }
+        
+        .feature-status {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .feature-status.check {
+            color: #34c759;
+        }
+        
+        .feature-status.cross {
+            color: #ff9500;
+        }
+        
+        /* Login Button */
+        .login-section {
+            width: 100%;
+            padding: 0 24px 50px;
+        }
+        
+        .login-button {
+            width: 100%;
+            padding: 16px;
+            background: #007aff;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .login-button:hover {
+            background: #0066d6;
+            transform: translateY(-1px);
+        }
+        
+        /* Bottom Tab Bar */
+        .bottom-tab-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 83px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 0.5px solid #e5e5ea;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px;
+            padding-bottom: 20px;
+        }
+        
+        .bottom-tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .tab-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tab-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .tab-label {
+            font-size: 10px;
+            color: #8e8e93;
+        }
+        
+        .tab-label.active {
+            color: #007aff;
+        }
+    </style>
+</head>
+<body>
+    <div class="iphone-container">
+        <div class="iphone-screen">
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <div class="status-left">
+                    <span class="status-time">9:41</span>
+                </div>
+                <div class="status-right">
+                    <span>📶</span>
+                    <span>📶</span>
+                    <div class="battery">
+                        <div class="battery-fill"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- App Content -->
+            <div class="app-content">
+                <!-- Navigation Bar -->
+                <div class="nav-bar">
+                    <div class="nav-title">작성</div>
+                </div>
+                
+                <!-- Guest Content -->
+                <div class="guest-content">
+                    <!-- Icon -->
+                    <div class="guest-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="35" stroke="#ff9500" stroke-width="3" stroke-dasharray="8 4"/>
+                            <circle cx="40" cy="30" r="12" fill="#ff9500"/>
+                            <path d="M40 45 C25 45, 15 55, 15 70 L65 70 C65 55, 55 45, 40 45 Z" fill="#ff9500"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div class="guest-message">
+                        <h1 class="guest-title">게스트 모드</h1>
+                        <p class="guest-subtitle">작품을 작성하려면<br>로그인이 필요합니다</p>
+                    </div>
+                    
+                    <!-- Features List -->
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" stroke="#007aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2Z" stroke="#007aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="feature-text">다른 사람의 작품 감상</span>
+                            <svg class="feature-status check" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="#34c759"/>
+                                <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="#007aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="feature-text">작품에 좋아요 표시</span>
+                            <svg class="feature-status cross" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="#ff9500"/>
+                                <path d="M15 9L9 15M9 9L15 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z" stroke="#007aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="feature-text">작품 북마크 저장</span>
+                            <svg class="feature-status cross" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="#ff9500"/>
+                                <path d="M15 9L9 15M9 9L15 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L19.18 6.03L15.45 11.82L21 15L15.45 18.18L19.18 23.97L13.09 21.74L12 28L10.91 21.74L4.82 23.97L8.55 18.18L3 15L8.55 11.82L4.82 6.03L10.91 8.26L12 2Z" stroke="#007aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="feature-text">작품 작성 및 기여</span>
+                            <svg class="feature-status cross" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="#ff9500"/>
+                                <path d="M15 9L9 15M9 9L15 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Login Button -->
+                <div class="login-section">
+                    <button class="login-button">로그인하기</button>
+                </div>
+            </div>
+            
+            <!-- Bottom Tab Bar -->
+            <div class="bottom-tab-bar">
+                <div class="bottom-tab-item">
+                    <div class="tab-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#007aff" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="9" fill="#007aff"/>
+                            <path d="M15.5 8.5L8.5 15.5M15.5 8.5L14 7M15.5 8.5L17 10L10 17H7V14L14 7L15.5 8.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="tab-label active">작성</span>
+                </div>
+                <div class="bottom-tab-item">
+                    <div class="tab-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" stroke="#8e8e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2Z" stroke="#8e8e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="tab-label">둘러보기</span>
+                </div>
+                <div class="bottom-tab-item">
+                    <div class="tab-icon" style="position: relative;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="#8e8e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="7" r="4" stroke="#8e8e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="tab-label">내 활동</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

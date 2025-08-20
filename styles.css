@@ -180,6 +180,17 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
+    align-items: center;
+}
+
+.app-store-badge-hero {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.app-store-badge-hero:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 .btn {
@@ -798,6 +809,21 @@ blockquote {
     align-items: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
+}
+
+.app-store-badge {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.app-store-badge:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.app-store-badge img {
+    height: 60px;
+    width: auto;
 }
 
 .cta-note {

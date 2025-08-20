@@ -453,7 +453,7 @@
                 }, 200);
             }, 2000);
             
-            // Stage 2: 두 번째 기여 + 좋아요 (4초 후)
+            // Stage 2: 두 번째 기여 + 좋아요 (5초 후)
             setTimeout(() => {
                 addContribution(contributions[1], 1);
                 // 두 번째 기여 알림
@@ -461,28 +461,28 @@
                     showNotification(`${contributions[1].name}님이 기여했습니다`);
                 }, 200);
                 setTimeout(animateHeart, 500);
-            }, 4000);
+            }, 5000);
             
-            // Stage 3: 세 번째 기여 + 좋아요 (6초 후)
+            // Stage 3: 세 번째 기여 + 좋아요 (8초 후)
             setTimeout(() => {
                 addContribution(contributions[2], 2);
                 // 세 번째 기여 알림
                 setTimeout(() => {
                     showNotification(`${contributions[2].name}님이 기여했습니다`);
-                }, 300);
+                }, 200);
                 setTimeout(() => {
                     animateHeart();
                     animateHeart();
                 }, 1000);
-            }, 6000);
+            }, 8000);
             
-            // Stage 4: 완성 알림 (9초 후)
+            // Stage 4: 완성 알림 (11초 후)
             setTimeout(() => {
                 showNotification('📖 작품이 100% 완성되었습니다!');
-            }, 9000);
+            }, 11000);
             
-            // 11초 후 리셋
-            setTimeout(resetAnimation, 11000);
+            // 14초 후 리셋
+            setTimeout(resetAnimation, 14000);
         }
         
         // 애니메이션 시작

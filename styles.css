@@ -1012,15 +1012,17 @@ blockquote {
     
     /* Typography */
     .hero-title {
-        font-size: 2.5rem;
-        line-height: 1.1;
-        margin-bottom: 12px;
+        font-size: 2.75rem;
+        line-height: 1.15;
+        margin-bottom: 20px;
+        font-weight: 700;
     }
     
     .hero-subtitle {
-        font-size: 1.1rem;
-        line-height: 1.5;
-        margin-bottom: 24px;
+        font-size: 1.125rem;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        color: var(--text-gray);
     }
     
     .section-title {
@@ -1033,22 +1035,26 @@ blockquote {
     
     /* Hero Section - Mobile First Design */
     .hero {
-        padding-top: 80px;
-        padding-bottom: 40px;
+        padding-top: 70px;
+        padding-bottom: 60px;
         min-height: 100vh;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
     }
     
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 0;
-        padding-top: 20px;
+        padding: 0;
     }
     
     .hero-content {
-        padding: 0 16px;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .hero-visual {
@@ -1058,19 +1064,19 @@ blockquote {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
-        margin-bottom: 30px;
+        gap: 16px;
+        margin-bottom: 0;
     }
     
     .app-store-link svg {
-        width: 180px;
-        height: 60px;
+        width: 200px;
+        height: 67px;
     }
     
     .btn-secondary {
-        width: 180px;
-        height: 52px;
-        font-size: 0.95rem;
+        width: 200px;
+        height: 56px;
+        font-size: 1rem;
         padding: 0;
         display: flex;
         align-items: center;
@@ -1085,9 +1091,9 @@ blockquote {
     .hero-stats-mobile {
         display: flex !important;
         justify-content: center;
-        gap: 24px;
-        margin-top: 40px;
-        padding-top: 20px;
+        gap: 30px;
+        margin-top: 60px;
+        padding-top: 30px;
         border-top: 1px solid var(--border-light);
     }
     
@@ -1106,19 +1112,27 @@ blockquote {
     }
     
     /* Problem Section */
+    .problem-section {
+        padding: 60px 0;
+    }
+    
     .problem-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+        gap: 20px;
     }
     
     .problem-card {
-        padding: var(--spacing-lg);
+        padding: 24px;
     }
     
     /* Solution Section */
+    .solution-section {
+        padding: 60px 0;
+    }
+    
     .solution-content {
         grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
+        gap: 40px;
     }
     
     .solution-visual {
@@ -1126,19 +1140,27 @@ blockquote {
     }
     
     /* Features Section */
+    .features-section {
+        padding: 60px 0;
+    }
+    
     .features-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+        gap: 20px;
     }
     
     .feature-card {
-        padding: var(--spacing-lg);
+        padding: 24px;
     }
     
     /* How It Works */
+    .how-it-works {
+        padding: 60px 0;
+    }
+    
     .steps-container {
         flex-direction: column;
-        gap: var(--spacing-lg);
+        gap: 30px;
     }
     
     .step-connector {
@@ -1146,31 +1168,41 @@ blockquote {
     }
     
     /* Stories Section */
+    .stories-section {
+        padding: 60px 0;
+    }
+    
     .stories-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+        gap: 20px;
     }
     
     .story-card {
-        padding: var(--spacing-lg);
+        padding: 24px;
     }
     
     /* CTA Section */
+    .cta-section {
+        padding: 60px 0;
+    }
+    
     .cta-content {
-        padding: 0 var(--spacing-md);
+        padding: 0 20px;
     }
     
     .cta-title {
-        font-size: 1.75rem;
+        font-size: 2rem;
+        margin-bottom: 16px;
     }
     
     .cta-subtitle {
         font-size: 1rem;
+        margin-bottom: 32px;
     }
     
     .app-store-link-large svg {
-        width: 180px;
-        height: 60px;
+        width: 200px;
+        height: 67px;
     }
     
     /* Footer */
@@ -1203,27 +1235,38 @@ blockquote {
 /* Extra small devices */
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
-        line-height: 1.1;
+        font-size: 2.25rem;
+        line-height: 1.15;
     }
     
     .hero-subtitle {
         font-size: 1rem;
+        margin-bottom: 32px;
     }
     
     .app-store-link svg {
-        width: 160px;
-        height: 53px;
+        width: 180px;
+        height: 60px;
     }
     
     .btn-secondary {
-        width: 160px;
-        height: 48px;
-        font-size: 0.9rem;
+        width: 180px;
+        height: 52px;
+        font-size: 0.95rem;
     }
     
     .hero-stats-mobile {
-        gap: 16px;
+        gap: 20px;
+        margin-top: 50px;
+        padding-top: 25px;
+    }
+    
+    .stat-number {
+        font-size: 1.125rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
     }
     
     .problem-icon {
@@ -1246,5 +1289,19 @@ blockquote {
     .container, .nav-container, .hero-content {
         padding-left: 16px;
         padding-right: 16px;
+    }
+    
+    /* Section spacing */
+    .problem-section,
+    .solution-section,
+    .features-section,
+    .how-it-works,
+    .stories-section,
+    .cta-section {
+        padding: 50px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 30px;
     }
 }

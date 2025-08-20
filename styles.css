@@ -183,22 +183,23 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.btn-app-store {
-    background: #000;
-    color: white;
-    border: none;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+.app-store-link {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.btn-app-store:hover {
-    background: #1a1a1a;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+.app-store-link:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
-.btn-app-store i {
-    font-size: 1.2em;
+.app-store-link svg {
+    display: block;
+}
+
+.app-store-link-large svg {
+    width: 150px;
+    height: 50px;
 }
 
 .btn {

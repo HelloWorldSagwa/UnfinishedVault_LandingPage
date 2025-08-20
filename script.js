@@ -39,50 +39,31 @@ window.addEventListener('scroll', () => {
 });
 
 // Mobile Menu Toggle
-const mobileToggle = document.querySelector('.nav-mobile-toggle');
-const navMenu = document.querySelector('.nav-menu');
-let isMenuOpen = false;
-
-if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
-        
-        if (isMenuOpen) {
-            // Create mobile menu
-            const mobileMenu = document.createElement('div');
-            mobileMenu.className = 'mobile-menu';
-            mobileMenu.innerHTML = `
-                <a href="#features" class="mobile-link">기능</a>
-                <a href="#how-it-works" class="mobile-link">사용법</a>
-                <a href="#stories" class="mobile-link">스토리</a>
-                <a href="blog.html" class="mobile-link">개발블로그</a>
-                <a href="#download" class="mobile-link mobile-cta">다운로드</a>
-            `;
-            navbar.appendChild(mobileMenu);
-            
-            // Animate hamburger to X
-            mobileToggle.classList.add('active');
-            
-            // Add click listeners to mobile links
-            document.querySelectorAll('.mobile-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    closeMobileMenu();
-                });
-            });
-        } else {
-            closeMobileMenu();
-        }
-    });
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileToggle = document.querySelector('.nav-mobile-toggle');
+    
+    mobileMenu.classList.toggle('active');
+    mobileToggle.classList.toggle('active');
 }
 
 function closeMobileMenu() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    if (mobileMenu) {
-        mobileMenu.remove();
-    }
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileToggle = document.querySelector('.nav-mobile-toggle');
+    
+    mobileMenu.classList.remove('active');
     mobileToggle.classList.remove('active');
-    isMenuOpen = false;
 }
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navToggle = document.querySelector('.nav-mobile-toggle');
+    
+    if (!mobileMenu.contains(event.target) && !navToggle.contains(event.target)) {
+        closeMobileMenu();
+    }
+});
 
 // Animated Counter for Stats
 const observerOptions = {

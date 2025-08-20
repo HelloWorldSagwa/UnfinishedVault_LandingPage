@@ -41,13 +41,22 @@
                 <a href="blog.html" class="nav-link">개발블로그</a>
                 <a href="#download" class="nav-link nav-cta">다운로드</a>
             </div>
-            <div class="nav-mobile-toggle">
+            <div class="nav-mobile-toggle" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
     </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#features" onclick="closeMobileMenu()">기능</a>
+        <a href="#how-it-works" onclick="closeMobileMenu()">사용법</a>
+        <a href="#stories" onclick="closeMobileMenu()">스토리</a>
+        <a href="blog.html">개발블로그</a>
+        <a href="#download" class="nav-cta" onclick="closeMobileMenu()">다운로드</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">

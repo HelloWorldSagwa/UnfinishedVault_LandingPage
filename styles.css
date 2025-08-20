@@ -183,14 +183,22 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.app-store-badge-hero {
-    display: inline-block;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.btn-app-store {
+    background: #000;
+    color: white;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-.app-store-badge-hero:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+.btn-app-store:hover {
+    background: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-app-store i {
+    font-size: 1.2em;
 }
 
 .btn {
@@ -811,20 +819,6 @@ blockquote {
     margin-bottom: var(--spacing-xl);
 }
 
-.app-store-badge {
-    display: inline-block;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.app-store-badge:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-
-.app-store-badge img {
-    height: 60px;
-    width: auto;
-}
 
 .cta-note {
     display: flex;

@@ -44,6 +44,12 @@ body {
     line-height: 1.6;
     background: var(--secondary-white);
     overflow-x: hidden;
+    max-width: 100%;
+}
+
+html {
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .container {
@@ -276,6 +282,10 @@ h1, h2, h3, h4, h5, h6 {
 .hero-stats {
     display: flex;
     gap: var(--spacing-xl);
+}
+
+.hero-stats-mobile {
+    display: none;
 }
 
 .stat {
@@ -980,6 +990,14 @@ blockquote {
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
     /* Navigation */
+    .navbar {
+        padding: 12px 0;
+    }
+    
+    .nav-container {
+        padding: 0 16px;
+    }
+    
     .nav-menu {
         display: none;
     }
@@ -994,11 +1012,15 @@ blockquote {
     
     /* Typography */
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        line-height: 1.1;
+        margin-bottom: 12px;
     }
     
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-bottom: 24px;
     }
     
     .section-title {
@@ -1009,16 +1031,24 @@ blockquote {
         font-size: 1rem;
     }
     
-    /* Hero Section */
+    /* Hero Section - Mobile First Design */
     .hero {
-        padding-top: calc(80px + var(--spacing-xl));
-        padding-bottom: var(--spacing-xl);
+        padding-top: 80px;
+        padding-bottom: 40px;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
     }
     
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: var(--spacing-xl);
+        gap: 0;
+        padding-top: 20px;
+    }
+    
+    .hero-content {
+        padding: 0 16px;
     }
     
     .hero-visual {
@@ -1028,31 +1058,51 @@ blockquote {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
-        gap: var(--spacing-sm);
+        gap: 12px;
+        margin-bottom: 30px;
     }
     
     .app-store-link svg {
-        width: 150px;
-        height: 50px;
+        width: 180px;
+        height: 60px;
     }
     
-    .btn {
-        width: 100%;
-        max-width: 250px;
+    .btn-secondary {
+        width: 180px;
+        height: 52px;
+        font-size: 0.95rem;
+        padding: 0;
+        display: flex;
+        align-items: center;
         justify-content: center;
     }
     
     .hero-stats {
+        display: none !important; /* Hide desktop stats on mobile */
+    }
+    
+    /* Show minimal stats below fold */
+    .hero-stats-mobile {
+        display: flex !important;
         justify-content: center;
-        gap: var(--spacing-md);
+        gap: 24px;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-light);
+    }
+    
+    .stat {
+        text-align: center;
     }
     
     .stat-number {
         font-size: 1.25rem;
+        display: block;
     }
     
     .stat-label {
         font-size: 0.75rem;
+        display: block;
     }
     
     /* Problem Section */
@@ -1153,17 +1203,27 @@ blockquote {
 /* Extra small devices */
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
     }
     
     .app-store-link svg {
-        width: 140px;
-        height: 47px;
+        width: 160px;
+        height: 53px;
     }
     
-    .hero-stats {
-        flex-direction: column;
-        gap: var(--spacing-sm);
+    .btn-secondary {
+        width: 160px;
+        height: 48px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-stats-mobile {
+        gap: 16px;
     }
     
     .problem-icon {
@@ -1176,5 +1236,15 @@ blockquote {
     
     .problem-card p {
         font-size: 0.9rem;
+    }
+    
+    /* Prevent horizontal scroll */
+    * {
+        max-width: 100vw;
+    }
+    
+    .container, .nav-container, .hero-content {
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }

@@ -1,5 +1,36 @@
 /* Blog Specific Styles */
 
+/* Override main page complex styles for blog page */
+.blog-page .floating-shapes,
+.blog-page .floating-cards,
+.blog-page .hero::before,
+.blog-page .hero::after {
+    display: none !important;
+}
+
+/* Remove all decorative gradients and animations */
+.blog-page *::before,
+.blog-page *::after {
+    animation: none !important;
+}
+
+/* Simplify navbar for blog */
+.blog-page .navbar {
+    background: white !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: none !important;
+}
+
+/* Reset button styles to simple */
+.blog-page .btn-primary {
+    background: var(--primary-purple) !important;
+}
+
+.blog-page .btn-primary::before {
+    display: none !important;
+}
+
 /* Active Navigation Link */
 .nav-link.active {
     color: var(--primary-purple);
@@ -8,28 +39,29 @@
 
 /* Blog Hero */
 .blog-hero {
-    padding-top: calc(80px + var(--spacing-3xl));
-    padding-bottom: var(--spacing-3xl);
-    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    padding-top: calc(80px + var(--spacing-2xl));
+    padding-bottom: var(--spacing-2xl);
+    background: #fafbfc;
     text-align: center;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .blog-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 700;
     color: var(--primary-dark);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
 }
 
 .blog-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: var(--text-gray);
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 /* Timeline Section */
 .timeline-section {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-2xl) 0;
     background: white;
 }
 
@@ -47,7 +79,7 @@
     left: 50%;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, var(--primary-purple), var(--primary-purple-light));
+    background: var(--border-light);
     transform: translateX(-50%);
 }
 
@@ -88,17 +120,17 @@
 }
 
 .timeline-content {
-    background: var(--secondary-off-white);
-    padding: var(--spacing-xl);
-    border-radius: 16px;
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
     max-width: 400px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-light);
     transition: var(--transition-normal);
 }
 
 .timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-purple);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .timeline-content h3 {
@@ -152,8 +184,8 @@
 
 /* Updates Section */
 .updates-section {
-    padding: var(--spacing-3xl) 0;
-    background: var(--secondary-off-white);
+    padding: var(--spacing-2xl) 0;
+    background: #fafbfc;
 }
 
 .updates-grid {
@@ -165,14 +197,15 @@
 
 .update-card {
     background: white;
-    padding: var(--spacing-xl);
-    border-radius: 16px;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
     transition: var(--transition-normal);
 }
 
 .update-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-purple);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .update-header {
@@ -243,7 +276,7 @@
 
 /* Tech Section */
 .tech-section {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-2xl) 0;
     background: white;
 }
 
@@ -256,29 +289,29 @@
 
 .tech-card {
     text-align: center;
-    padding: var(--spacing-xl);
-    border-radius: 16px;
-    background: var(--secondary-off-white);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    background: #fafbfc;
+    border: 1px solid var(--border-light);
     transition: var(--transition-normal);
 }
 
 .tech-card:hover {
-    transform: translateY(-5px);
     background: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-purple);
 }
 
 .tech-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     margin: 0 auto var(--spacing-md);
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-purple-light));
-    border-radius: 16px;
+    background: var(--primary-purple);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
 }
 
 .tech-card h3 {
@@ -294,8 +327,9 @@
 
 /* Contact Section */
 .contact-section {
-    padding: var(--spacing-3xl) 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    padding: var(--spacing-2xl) 0;
+    background: #fafbfc;
+    border-top: 1px solid var(--border-light);
 }
 
 .contact-content {
@@ -305,16 +339,16 @@
 }
 
 .contact-content h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-size: clamp(1.75rem, 3vw, 2rem);
     margin-bottom: var(--spacing-md);
     color: var(--primary-dark);
 }
 
 .contact-content p {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--text-gray);
-    margin-bottom: var(--spacing-xl);
-    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
 }
 
 .contact-buttons {

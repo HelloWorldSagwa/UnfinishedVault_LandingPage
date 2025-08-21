@@ -166,12 +166,53 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: var(--spacing-3xl);
     background: linear-gradient(180deg, 
         #ffffff 0%, 
-        #f8f9ff 50%, 
+        #f8f9ff 25%, 
+        #f0f2ff 50%, 
+        #e8ebff 75%, 
         #ffffff 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle at 30% 40%, rgba(94, 96, 206, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float-slow 20s ease-in-out infinite;
+    filter: blur(40px);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -20%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle at 70% 60%, rgba(78, 205, 196, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float-slow 25s ease-in-out infinite reverse;
+    filter: blur(30px);
+}
+
+@keyframes float-slow {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
 }
 
 .hero-container {
@@ -364,7 +405,21 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Problem Section ===== */
 .problem-section {
     padding: var(--spacing-3xl) 0;
-    background: var(--secondary-off-white);
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 50%, #f8f9ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.problem-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 107, 157, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
 }
 
 .problem-grid {
@@ -406,7 +461,32 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Solution Section ===== */
 .solution-section {
     padding: var(--spacing-3xl) 0;
-    background: white;
+    background: linear-gradient(180deg, #ffffff 0%, #fafbff 50%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.05) 0%, transparent 60%);
+    filter: blur(100px);
+    transform: translateY(-50%);
+}
+
+.solution-section::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(168, 230, 207, 0.06) 0%, transparent 60%);
+    filter: blur(80px);
 }
 
 .solution-content {
@@ -642,7 +722,21 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Features Section ===== */
 .features-section {
     padding: var(--spacing-3xl) 0;
-    background: white;
+    background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
+    position: relative;
+}
+
+.features-section::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.06) 0%, transparent 60%);
+    filter: blur(100px);
+    pointer-events: none;
 }
 
 .features-grid {
@@ -689,7 +783,21 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== How It Works Section ===== */
 .how-it-works {
     padding: var(--spacing-3xl) 0;
-    background: var(--secondary-off-white);
+    background: linear-gradient(135deg, #fafbff 0%, #f0f2ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.how-it-works::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 217, 61, 0.04) 0%, transparent 60%);
+    filter: blur(80px);
 }
 
 .steps-container {
@@ -746,7 +854,20 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Stories Section ===== */
 .stories-section {
     padding: var(--spacing-3xl) 0;
-    background: white;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
+    position: relative;
+}
+
+.stories-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(240, 147, 251, 0.06) 0%, transparent 70%);
+    filter: blur(100px);
+    pointer-events: none;
 }
 
 .stories-grid {
@@ -814,7 +935,33 @@ blockquote {
 /* ===== CTA Section ===== */
 .cta-section {
     padding: var(--spacing-3xl) 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 50%, #f0f2ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(94, 96, 206, 0.08) 0%, transparent 60%);
+    filter: blur(100px);
+    animation: float-slow 20s ease-in-out infinite;
+}
+
+.cta-section::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 107, 157, 0.06) 0%, transparent 60%);
+    filter: blur(100px);
+    animation: float-slow 25s ease-in-out infinite reverse;
 }
 
 .cta-content {
@@ -1306,4 +1453,17 @@ blockquote {
         margin-bottom: 30px;
     }
     
+    /* Simplify background effects on mobile for performance */
+    .hero::before,
+    .hero::after,
+    .problem-section::before,
+    .solution-section::before,
+    .solution-section::after,
+    .features-section::after,
+    .how-it-works::before,
+    .stories-section::before,
+    .cta-section::before,
+    .cta-section::after {
+        display: none;
+    }
 }

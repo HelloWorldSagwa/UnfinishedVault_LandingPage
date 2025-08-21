@@ -361,13 +361,13 @@ h1, h2, h3, h4, h5, h6 {
 .app-screenshot-container {
     position: relative;
     width: 100%;
-    max-width: 393px;
+    max-width: 430px;
     margin: 0 auto;
 }
 
 .app-screenshot-container iframe {
     width: 100%;
-    height: 852px;
+    height: 932px;
     border: none;
 }
 

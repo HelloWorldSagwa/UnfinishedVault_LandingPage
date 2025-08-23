@@ -30,7 +30,7 @@
 
 ### 색상 팔레트
 - **Primary Dark**: `#1a1a2e` - 깊은 남색 (창의성과 깊이)
-- **Primary Purple**: `#5e60ce` - 메인 보라색 (협업과 창의성)
+- **Primary Purple**: `#4e51cf` - 메인 보라색 (협업과 창의성)
 - **Secondary White**: `#ffffff` - 순백색
 - **Text Dark**: `#2d2d2d` - 소프트 블랙
 - **Text Gray**: `#6c757d` - 중간 회색

@@ -47,7 +47,7 @@
     <rect x="20" y="152" width="108" height="8" fill="#e5e7eb" rx="2"/>
     
     <!-- Save button -->
-    <rect x="35" y="260" width="80" height="35" fill="#5e60ce" rx="17"/>
+    <rect x="35" y="260" width="80" height="35" fill="#4e51cf" rx="17"/>
     <text x="75" y="282" font-family="Inter" font-size="10" fill="#ffffff" text-anchor="middle">저장하기</text>
   </g>
   
